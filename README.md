@@ -13,8 +13,8 @@ WeatherWise is a simple weather dashboard that allows users to check the current
 
 ## Technologies Used in WeatherWise Weather Dashboard
 
-### 1. HTML (HyperText Markup Language)
-### 2. CSS (Cascading Style Sheets)
+### 1. HTML
+### 2. CSS
 ### 3. JavaScript
 
 - **Description:**  In WeatherWise, JavaScript is crucial for interacting with the OpenWeatherMap API, handling user input, and dynamically updating the dashboard based on received data.
