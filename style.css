@@ -112,6 +112,7 @@
     border-radius: 5px;
     background: #7393B3;
     width: calc(100% / 5);
+    text-transform: capitalize;
 }
 .weather-cards .card img{
     max-width: 100px;
