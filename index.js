@@ -4,7 +4,8 @@ const cityInput = document.querySelector(".city-input");
 const weatherCardsDiv = document.querySelector(".weather-cards");
 const currentWeatherDiv = document.querySelector(".current-weather");
 
-const API_KEY = "0b34a77bfd31a66d28e673d966935b1e"; //API key for OpenWeatherMap API
+const API_KEY = "7aee831d9df1c6c7d594e736c92a01c2"; //API key for OpenWeatherMap API
+
 
 const createWeatherCard = (cityName, weatherItem, index) =>{
     if(index === 0){ // HTML for the main weather card 
@@ -60,7 +61,7 @@ const getWeatherDetails = (cityName, lat, lon) => {
         weatherCardsDiv.innerHTML = "";
 
         // creating weather cards and adding them to the DOM 
-        console.log(fiveDaysForecast)
+        // console.log(fiveDaysForecast)
         fiveDaysForecast.forEach((weatherItem, index) => {
             if(index === 0){
                 currentWeatherDiv.insertAdjacentHTML("beforeend",  createWeatherCard(cityName, weatherItem, index))
@@ -92,7 +93,7 @@ const getCityCoordinates = () => {
 const getUserCoordinates = () => {
     navigator.geolocation.getCurrentPosition(
         position => {
-            console.log(position)
+            // console.log(position)
             const {latitude, longitude} = position.coords;
             const REVERSE_GEOCODING_URL=`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
 
@@ -100,7 +101,7 @@ const getUserCoordinates = () => {
             fetch(REVERSE_GEOCODING_URL)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 const { name } = data[0]
                 getWeatherDetails(name, latitude, longitude);
             })
